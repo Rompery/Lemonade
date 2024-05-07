@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -46,7 +47,8 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun LemonadeApp( modifier: Modifier = Modifier) {
-    Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
+    Column (modifier=modifier){
+        Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
             Button(onClick = { /*TODO*/ }
 
             ) {
@@ -55,15 +57,72 @@ fun LemonadeApp( modifier: Modifier = Modifier) {
                     contentDescription = stringResource(R.string.lemmon_tree)
                 )
             }
-        Spacer(modifier = Modifier.height(72.dp))
+            Spacer(modifier = Modifier.height(72.dp))
 
-        Text(
-            text = stringResource(R.string.tap_the_lemon_tree),
-            fontSize =18.sp
-        )
+            Text(
+                text = stringResource(R.string.tap_the_lemon_tree),
+                fontSize =18.sp
+            )
+        }
+        Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
+            Button(onClick = { /*TODO*/ }
+
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.lemon_squeeze),
+                    contentDescription = stringResource(R.string.lemon)
+                )
+
+                Spacer(modifier = Modifier.height(72.dp))
+
+                Text(text = stringResource(R.string.keep_tapping_the_lemon_to_squeeze_it),
+                    fontSize = 18.sp
+                )
+            }
+        }
+
+        Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
+            Button(onClick = { /*TODO*/ }
+
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.lemon_drink),
+                    contentDescription = stringResource(R.string.glass_of_lemonade)
+                )
+
+                Spacer(modifier = Modifier.height(72.dp))
+
+                Text(text = stringResource(R.string.tap_the_lemonade_to_drink_it),
+                    fontSize = 18.sp
+                )
+            }
+        }
+
+        Column(modifier = modifier, verticalArrangement = Arrangement.Center) {
+            Button(onClick = { /*TODO*/ }
+
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.lemon_restart),
+                    contentDescription = stringResource(R.string.empty_glass)
+                )
+
+                Spacer(modifier = Modifier.height(72.dp))
+
+                Text(text = stringResource(R.string.tap_the_empty_glass_to_start_again),
+                    fontSize = 18.sp
+                )
+            }
+        }
     }
 
 }
+
+
+
+
+
+
 
 @Preview(showBackground = true)
 @Composable
